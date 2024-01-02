@@ -13,7 +13,7 @@ from azure.cli.core.aaz import *
 
 @register_command(
     "networkcloud l3network create",
-    is_experimental=True,
+    is_preview=True,
 )
 class Create(AAZCommand):
     """Create a new layer 3 (L3) network or update the properties of the existing network.
@@ -23,9 +23,9 @@ class Create(AAZCommand):
     """
 
     _aaz_info = {
-        "version": "2023-05-01-preview",
+        "version": "2023-10-01-preview",
         "resources": [
-            ["mgmt-plane", "/subscriptions/{}/resourcegroups/{}/providers/microsoft.networkcloud/l3networks/{}", "2023-05-01-preview"],
+            ["mgmt-plane", "/subscriptions/{}/resourcegroups/{}/providers/microsoft.networkcloud/l3networks/{}", "2023-10-01-preview"],
         ]
     }
 
@@ -125,7 +125,7 @@ class Create(AAZCommand):
             arg_group="Properties",
             help="The IPV6 prefix (CIDR) assigned to this L3 network. Required when the IP allocation type is IPV6 or DualStack.",
         )
-        _args_schema.l3_isolation_domain_id = AAZStrArg(
+        _args_schema.l3_isolation_domain_id = AAZResourceIdArg(
             options=["--l3-isolation-domain-id"],
             arg_group="Properties",
             help="The resource ID of the Network Fabric l3IsolationDomain.",
@@ -220,7 +220,7 @@ class Create(AAZCommand):
         def query_parameters(self):
             parameters = {
                 **self.serialize_query_param(
-                    "api-version", "2023-05-01-preview",
+                    "api-version", "2023-10-01-preview",
                     required=True,
                 ),
             }

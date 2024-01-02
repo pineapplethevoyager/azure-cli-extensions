@@ -7,17 +7,18 @@
 
 """
 This custom code inherits from generate cluster metrics configuration functions. It is integrated into the generated code via:
-  cli-ext/v20221212preview/ext/src/networkcloud/azext_networkcloud/commands.py
+  cli-ext/v*/ext/src/networkcloud/azext_networkcloud/commands.py
 """
 
-from azure.cli.core.aaz import register_callback
 from azext_networkcloud.aaz.latest.networkcloud.cluster.metricsconfiguration._show import (
     Show as _Show,
 )
+from azure.cli.core.aaz import register_callback
+
 from .common import ClusterMetricsConfiguration
 
 # This custom code inherits from generate cluster metrics configuration functions. It is integrated into the generated code via:
-#   cli-ext/v20221212preview/ext/src/networkcloud/azext_networkcloud/commands.py
+#   cli-ext/v*/ext/src/networkcloud/azext_networkcloud/commands.py
 
 
 class Show(_Show):

@@ -12,6 +12,7 @@ from azext_networkcloud.aaz.latest.networkcloud.virtualmachine.console._show imp
     Show as _Show,
 )
 from azure.cli.core.aaz import register_callback
+
 from .common import VirtualMachineConsole
 
 
@@ -19,7 +20,7 @@ class Show(_Show):
     """
     This custom code inherits from generate virtual machine console functions.
     It is integrated into the generated code via:
-    cli-ext/v20221212preview/ext/src/networkcloud/azext_networkcloud/commands.py
+    cli-ext/v*/ext/src/networkcloud/azext_networkcloud/commands.py
     """
 
     @classmethod
